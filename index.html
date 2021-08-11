@@ -5,36 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizzy McQuiz Score Quiz</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="container">
-        <section id="#startPage">
+        
+        <section id="startPage">
             <h1>How good are you at knowing some things and stuff?</h1>
             <h1>Find out on the next episode of pokemon!</h1>
         <button id="startBtn">Begin Le Quiz(no's)</button>
-        <button id="startHighscore" onclick="showHighscore()">Woah thats a highscore fellow human-being!</button>
+        <button id="startHighscore" onclick="showHighscore()">Highscores</button>
         </section>
-    <div id="quiz">
-        <div id="timer">Time til hot pocket is finished: </div>
-            <section id="questions"><p>Here are the questions</p></section>
-                <button id="A" onclick="checkAnswer('A')">A</button>
-                <button id="B" onclick="checkAnswer('B')">B</button>
-                <button id="C" onclick="checkAnswer('C')">C</button>
-                <button id="D" onclick="checkAnswer('D')">D</button>
-            <section id="result"></section>
+   
+        <div id="quiz">
+            <div id="timer">Time til hot pocket is finished: </div>
+                <section id="questions"><p>Questions</p></section>
+                    <button id="A" onclick="checkAnswer('A')">A</button>
+                    <button id="B" onclick="checkAnswer('B')">B</button>
+                    <button id="C" onclick="checkAnswer('C')">C</button>
+                    <button id="D" onclick="checkAnswer('D')">D</button>
+                <section id="result"></section>
     </div>
     <div id="Gameover">
+        
         <section id="finalScore"></section>
-        <input type="text" size="34.5" placeholder="Enter your initials for high score puropses only. I promise." name="initials" id="initials"/>
+        <input type="text" size="34.5" placeholder="Enter your initials for high score" name="initials" id="initials"/>
         <button id="submitScore">Submit Score</button>
     </div>
     <div id=highContainer>
     <div id="highPage">
-        <section id="highscore-header">
-            <h2>Initials here please</h2>
-            <h2>Score</h2>
-        </section>
         <div id= "highscore-initials"></div>
         <div id= "highscore-score"></div>
     </div>

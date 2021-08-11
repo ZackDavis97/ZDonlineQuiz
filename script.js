@@ -76,8 +76,8 @@ function startQuiz(){
     generateQuizQuestion();
 
     timerInterval = setInterval(function() {
-        timer.textContent = "Time left: " + timeLeft;
         timeLeft--;
+        timer.textContent = "Time left: " + timeLeft;
 
         if(timeLeft === 0) {
             clearInterval(timerInterval);
@@ -95,18 +95,19 @@ function showScore() {
 }
 
 function generateQuizQuestion() {
-    var currentQuestion = quizQuestions[currentQuestion];
-    questions.innerHTML = "<p>" + currentQuestion.question + "</p>";
-    buttonA.innerHTML = currentQuestion.choiceA;
-    buttonB.innerHTML = currentQuestion.choiceB;
-    buttonC.innerHTML = currentQuestion.choiceC;
-    buttonD.innerHTML = currentQuestion.choiceD;
-    
     Gameover.style.display = "none";
     if (currentQuestion === finalQuestion) {
         return showScore();
     }
-}
+    var questions = quizQuestions[currentQuestion];
+    questions.innerHTML = currentQuestion.question;
+    buttonA.innerHTML = currentQuestion.choiceA;
+    buttonB.innerHTML = currentQuestion.choiceB;
+    buttonC.innerHTML = currentQuestion.choiceC;
+    buttonD.innerHTML = currentQuestion.choiceD;
+    let choiceA = currentQuestion.choiceA
+    console.log(choiceA);
+};
 
 submitScore.addEventListener("click", function highscore (){
     if (initials.value === "") {
@@ -131,7 +132,7 @@ submitScore.addEventListener("click", function highscore (){
     }
 });
 
-function showHighscores(){
+function showHighscore(){
     startPage.style.display = "none";
     Gameover.style.display = "none";
     highContainer.style.display = "none";
@@ -173,7 +174,7 @@ function checkAnswer(answer){
     correct = quizQuestions[currentQuestion].correctAnswer;
     if (answer === correct && currentQuestion !== finalScore) {
         score++;
-        alert("You got it right fellow human!");
+        alert("You git it right fellow human!");
         currentQuestion++;
         generateQuizQuestion();
     } else if (answer !== correct && currentQuestion !== finalQuestion) {
@@ -186,4 +187,4 @@ function checkAnswer(answer){
     
 }
 
-startBtn.addEventListener("click", startBtn);
+startBtn.addEventListener("click", startQuiz);
